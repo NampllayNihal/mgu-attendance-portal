@@ -1,0 +1,5125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --blue-dark: #0b2d6b;
+    --blue-primary: #123f91;
+    --blue-main: #1d5dcc;
+    --blue-light: #eaf2ff;
+    --blue-soft: #f5f8ff;
+
+    --text-dark: #172b4d;
+    --text-gray: #64748b;
+
+    --border: #d9e3f1;
+
+    --white: #ffffff;
+}
+
+html,
+body,
+#root {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family:
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: var(--blue-soft);
+    color: var(--text-dark);
+}
+
+
+/* =====================================================
+   LOGIN PAGE
+   ===================================================== */
+
+.login-page {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 35px;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #edf4ff 0%,
+            #f8fbff 50%,
+            #e4eeff 100%
+        );
+}
+
+
+/* Background circles */
+
+.login-circle {
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+.login-circle-one {
+    width: 520px;
+    height: 520px;
+
+    left: -270px;
+    top: -260px;
+
+    background:
+        rgba(29, 93, 204, 0.08);
+}
+
+
+.login-circle-two {
+    width: 600px;
+    height: 600px;
+
+    right: -330px;
+    bottom: -330px;
+
+    background:
+        rgba(18, 63, 145, 0.07);
+}
+
+
+/* =====================================================
+   MAIN CARD
+   ===================================================== */
+
+.login-card {
+    width: 100%;
+    max-width: 1100px;
+
+    min-height: 650px;
+
+    display: grid;
+
+    grid-template-columns: 48% 52%;
+
+    background: var(--white);
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    position: relative;
+
+    z-index: 2;
+
+    box-shadow:
+        0 25px 70px
+        rgba(11, 45, 107, 0.16);
+}
+
+
+/* =====================================================
+   LEFT SECTION
+   ===================================================== */
+
+.login-left {
+    padding: 55px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            145deg,
+            #09265d 0%,
+            #0e347c 45%,
+            #1d5dcc 100%
+        );
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* Decorative shapes */
+
+.login-left::before {
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.12);
+
+    border-radius: 50%;
+
+    right: -220px;
+    top: -170px;
+}
+
+
+.login-left::after {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.1);
+
+    border-radius: 50%;
+
+    left: -190px;
+    bottom: -180px;
+}
+
+
+.university-section {
+    position: relative;
+    z-index: 2;
+}
+
+
+.logo-container {
+    width: 105px;
+    height: 105px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 27px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, 0.18);
+
+    overflow: hidden;
+}
+
+
+.mgu-logo {
+    width: 90px;
+    height: 90px;
+
+    object-fit: contain;
+}
+
+
+.logo-fallback {
+    width: 100%;
+    height: 100%;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    color: var(--blue-primary);
+}
+
+
+.university-section h1 {
+    font-size: 28px;
+
+    line-height: 1.35;
+
+    letter-spacing: 1px;
+
+    font-weight: 700;
+}
+
+
+.white-line {
+    width: 65px;
+    height: 4px;
+
+    border-radius: 5px;
+
+    background: white;
+
+    margin: 18px 0 13px;
+}
+
+
+.motto {
+    font-size: 15px;
+
+    letter-spacing: 1px;
+
+    opacity: 0.9;
+}
+
+
+/* Portal information */
+
+.portal-information {
+    max-width: 390px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.portal-icon {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background:
+        rgba(255, 255, 255, 0.13);
+
+    margin-bottom: 15px;
+}
+
+
+.portal-information h2 {
+    font-size: 28px;
+
+    margin-bottom: 12px;
+}
+
+
+.portal-information p {
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    opacity: 0.86;
+}
+
+
+/* Left footer */
+
+.left-footer {
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 13px;
+
+    opacity: 0.7;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =====================================================
+   RIGHT SECTION
+   ===================================================== */
+
+.login-right {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 55px;
+}
+
+
+.login-form {
+    width: 100%;
+    max-width: 410px;
+}
+
+
+.mobile-logo {
+    display: none;
+}
+
+
+.login-form h2 {
+    font-size: 32px;
+
+    color: var(--text-dark);
+
+    margin-bottom: 8px;
+}
+
+
+.login-subtitle {
+    color: var(--text-gray);
+
+    font-size: 15px;
+
+    margin-bottom: 34px;
+}
+
+
+/* Form */
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+
+.form-group label {
+    display: block;
+
+    color: #334155;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+}
+
+
+.input-box {
+    height: 53px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 15px;
+
+    gap: 11px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius: 9px;
+
+    background: #fbfdff;
+
+    color: #718096;
+
+    transition: 0.2s;
+}
+
+
+.input-box:focus-within {
+    border-color:
+        var(--blue-main);
+
+    background: white;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(29, 93, 204, 0.1);
+}
+
+
+.input-box input {
+    flex: 1;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    font-size: 15px;
+
+    color: var(--text-dark);
+}
+
+
+.input-box input::placeholder {
+    color: #9aa8bc;
+}
+
+
+.password-button {
+    border: none;
+
+    background: transparent;
+
+    color: #718096;
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+/* Login options */
+
+.login-options {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin:
+        2px
+        0
+        25px;
+}
+
+
+.remember-option {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: var(--text-gray);
+
+    font-size: 13px;
+}
+
+
+.remember-option input {
+    width: 15px;
+    height: 15px;
+
+    accent-color:
+        var(--blue-main);
+}
+
+
+.forgot-button {
+    border: none;
+
+    background: none;
+
+    color:
+        var(--blue-main);
+
+    font-size: 13px;
+}
+
+
+/* Login button */
+
+.login-button {
+    width: 100%;
+    height: 53px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--blue-primary),
+            var(--blue-main)
+        );
+
+    box-shadow:
+        0 8px 20px
+        rgba(29, 93, 204, 0.22);
+
+    transition: 0.2s;
+}
+
+
+.login-button:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 11px 25px
+        rgba(29, 93, 204, 0.3);
+}
+
+
+/* Notice */
+
+.login-notice {
+    margin-top: 27px;
+
+    padding: 13px 15px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    border-radius: 8px;
+
+    background:
+        var(--blue-light);
+}
+
+
+.notice-icon {
+    width: 18px;
+    height: 18px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background:
+        var(--blue-main);
+
+    color: white;
+
+    font-size: 11px;
+
+    font-weight: bold;
+}
+
+
+.login-notice p {
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    color: #53647d;
+}
+
+
+/* Footer */
+
+.login-footer {
+    text-align: center;
+
+    margin-top: 28px;
+
+    color: #9aa8bc;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 850px) {
+
+    .login-page {
+        padding: 15px;
+    }
+
+    .login-card {
+        grid-template-columns: 1fr;
+
+        max-width: 520px;
+    }
+
+    .login-left {
+        min-height: 390px;
+
+        padding: 40px;
+    }
+
+    .portal-information {
+        margin-top: 45px;
+    }
+
+    .left-footer {
+        display: none;
+    }
+
+    .login-right {
+        padding: 45px 40px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .login-page {
+        padding: 0;
+    }
+
+    .login-card {
+        min-height: 100vh;
+
+        border-radius: 0;
+    }
+
+    .login-left {
+        padding: 35px 25px;
+
+        min-height: 350px;
+    }
+
+    .logo-container {
+        width: 85px;
+        height: 85px;
+    }
+
+    .mgu-logo {
+        width: 73px;
+        height: 73px;
+    }
+
+    .university-section h1 {
+        font-size: 22px;
+    }
+
+    .portal-information h2 {
+        font-size: 23px;
+    }
+
+    .portal-information p {
+        font-size: 14px;
+    }
+
+    .login-right {
+        padding: 35px 25px;
+    }
+
+    .login-form h2 {
+        font-size: 27px;
+    }
+
+}
+
+
+
+
+
+
+
+/* =========================================================
+   FACULTY DASHBOARD
+   ========================================================= */
+
+.faculty-page {
+    min-height: 100vh;
+    display: flex;
+    background: #f4f7fc;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.faculty-sidebar {
+    width: 255px;
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            180deg,
+            #092d70,
+            #123f91
+        );
+
+    color: white;
+
+    padding: 24px 16px;
+
+    display: flex;
+    flex-direction: column;
+
+    position: sticky;
+    top: 0;
+}
+
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding:
+        4px
+        10px
+        27px;
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.12);
+}
+
+
+.sidebar-logo {
+    width: 43px;
+    height: 43px;
+
+    border-radius: 11px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        rgba(255, 255, 255, 0.14);
+}
+
+
+.sidebar-brand h2 {
+    font-size: 21px;
+}
+
+
+.sidebar-brand span {
+    display: block;
+
+    font-size: 10px;
+
+    opacity: 0.72;
+
+    margin-top: 2px;
+}
+
+
+.faculty-profile {
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    padding:
+        22px
+        10px;
+}
+
+
+.faculty-avatar,
+.small-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-weight: 700;
+}
+
+
+.faculty-avatar {
+    width: 40px;
+    height: 40px;
+
+    background: #dbeafe;
+    color: #123f91;
+
+    font-size: 13px;
+}
+
+
+.faculty-profile strong {
+    display: block;
+
+    font-size: 13px;
+}
+
+
+.faculty-profile span {
+    display: block;
+
+    font-size: 11px;
+
+    opacity: 0.65;
+
+    margin-top: 3px;
+}
+
+
+/* Menu */
+
+.menu-title {
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    opacity: 0.55;
+
+    padding:
+        8px
+        12px
+        10px;
+}
+
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.menu-item {
+    width: 100%;
+
+    border: none;
+
+    background: transparent;
+
+    color:
+        rgba(255, 255, 255, 0.72);
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding:
+        12px
+        13px;
+
+    border-radius: 8px;
+
+    text-align: left;
+
+    font-size: 13px;
+
+    transition: 0.2s;
+}
+
+
+.menu-item:hover {
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    color: white;
+}
+
+
+.menu-item.active {
+    background:
+        rgba(255, 255, 255, 0.15);
+
+    color: white;
+
+    box-shadow:
+        inset 3px 0 0 white;
+}
+
+
+.sidebar-logout {
+    margin-top: auto;
+
+    border: none;
+
+    background:
+        rgba(255, 255, 255, 0.07);
+
+    color:
+        rgba(255, 255, 255, 0.78);
+
+    border-radius: 8px;
+
+    padding: 12px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    font-size: 13px;
+
+    text-align: left;
+}
+
+
+.sidebar-logout:hover {
+    background:
+        rgba(255, 255, 255, 0.13);
+
+    color: white;
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.faculty-main {
+    flex: 1;
+
+    min-width: 0;
+
+    padding-bottom: 40px;
+}
+
+
+/* Header */
+
+.faculty-header {
+    height: 88px;
+
+    padding:
+        0
+        35px;
+
+    background: white;
+
+    border-bottom:
+        1px solid
+        #e3eaf3;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+.faculty-header h1 {
+    font-size: 23px;
+
+    color: #172b4d;
+}
+
+
+.faculty-header p {
+    color: #7b8aa3;
+
+    font-size: 12px;
+
+    margin-top: 5px;
+}
+
+
+.header-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+}
+
+
+.notification-button {
+    width: 38px;
+    height: 38px;
+
+    border:
+        1px solid
+        #e0e7f0;
+
+    border-radius: 9px;
+
+    background: white;
+
+    color: #64748b;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+}
+
+
+.notification-button span {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #dc3545;
+
+    position: absolute;
+
+    right: 8px;
+    top: 7px;
+}
+
+
+.header-user {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color: #52627a;
+}
+
+
+.small-avatar {
+    width: 36px;
+    height: 36px;
+
+    background: #dbeafe;
+
+    color: #123f91;
+
+    font-size: 11px;
+}
+
+
+.header-user strong {
+    display: block;
+
+    font-size: 12px;
+
+    color: #263b5c;
+}
+
+
+.header-user small {
+    display: block;
+
+    font-size: 10px;
+
+    color: #8795aa;
+
+    margin-top: 2px;
+}
+
+
+/* =========================================================
+   STATISTICS
+   ========================================================= */
+
+.statistics-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+
+    padding:
+        28px
+        35px
+        5px;
+}
+
+
+.stat-card {
+    background: white;
+
+    border:
+        1px solid
+        #e2e9f2;
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    box-shadow:
+        0 3px 12px
+        rgba(22, 52, 91, 0.04);
+}
+
+
+.stat-icon {
+    width: 47px;
+    height: 47px;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.stat-icon.blue {
+    background: #e6efff;
+    color: #1d5dcc;
+}
+
+
+.stat-icon.green {
+    background: #e7f7ef;
+    color: #159957;
+}
+
+
+.stat-icon.red {
+    background: #feecee;
+    color: #dc3545;
+}
+
+
+.stat-icon.orange {
+    background: #fff3df;
+    color: #d98200;
+}
+
+
+.stat-card span {
+    color: #7b8aa3;
+
+    font-size: 11px;
+}
+
+
+.stat-card h2 {
+    color: #1b3154;
+
+    font-size: 24px;
+
+    margin-top: 4px;
+}
+
+
+/* =========================================================
+   ATTENDANCE CARD
+   ========================================================= */
+
+.attendance-card {
+    margin:
+        23px
+        35px
+        0;
+
+    background: white;
+
+    border:
+        1px solid
+        #e0e7f0;
+
+    border-radius: 13px;
+
+    box-shadow:
+        0 4px 15px
+        rgba(22, 52, 91, 0.04);
+
+    overflow: hidden;
+}
+
+
+.attendance-heading {
+    padding:
+        23px
+        25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-bottom:
+        1px solid
+        #e7edf5;
+}
+
+
+.attendance-heading h2 {
+    color: #172b4d;
+
+    font-size: 19px;
+}
+
+
+.attendance-heading p {
+    color: #8190a5;
+
+    font-size: 12px;
+
+    margin-top: 5px;
+}
+
+
+.class-badge {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding:
+        9px
+        13px;
+
+    border-radius: 7px;
+
+    background: #eaf2ff;
+
+    color: #174ea6;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+/* Filters */
+
+.attendance-filters {
+    display: grid;
+
+    grid-template-columns:
+        1.4fr
+        1fr
+        1fr;
+
+    gap: 17px;
+
+    padding:
+        20px
+        25px;
+
+    background: #fbfcfe;
+
+    border-bottom:
+        1px solid
+        #e7edf5;
+}
+
+
+.filter-field label {
+    display: block;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    color: #53647d;
+
+    margin-bottom: 7px;
+}
+
+
+.select-wrapper {
+    height: 43px;
+
+    border:
+        1px solid
+        #dce5f0;
+
+    background: white;
+
+    border-radius: 7px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding:
+        0
+        12px;
+
+    color: #72839a;
+}
+
+
+.select-wrapper select,
+.select-wrapper input {
+    flex: 1;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #304562;
+
+    font-size: 12px;
+
+    min-width: 0;
+}
+
+
+.select-wrapper select {
+    appearance: none;
+}
+
+
+/* Tools */
+
+.attendance-tools {
+    padding:
+        17px
+        25px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+.student-search {
+    width: 330px;
+
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    border:
+        1px solid
+        #dce5f0;
+
+    border-radius: 7px;
+
+    padding:
+        0
+        12px;
+
+    color: #8090a5;
+}
+
+
+.student-search input {
+    border: none;
+
+    outline: none;
+
+    flex: 1;
+
+    font-size: 12px;
+}
+
+
+.attendance-date {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: #6d7d94;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.attendance-table-container {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+
+.attendance-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 850px;
+}
+
+
+.attendance-table th {
+    background: #f0f5fc;
+
+    color: #425773;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    text-align: left;
+
+    padding:
+        13px
+        15px;
+
+    border-top:
+        1px solid
+        #e3eaf3;
+
+    border-bottom:
+        1px solid
+        #e3eaf3;
+}
+
+
+.attendance-table td {
+    padding:
+        13px
+        15px;
+
+    border-bottom:
+        1px solid
+        #edf1f6;
+
+    color: #53647d;
+
+    font-size: 12px;
+
+    vertical-align: middle;
+}
+
+
+.attendance-table tbody tr:hover {
+    background: #f9fbfe;
+}
+
+
+.attendance-table td strong {
+    color: #334b6c;
+
+    font-weight: 600;
+}
+
+
+.student-name {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color: #2e4564;
+
+    font-weight: 500;
+}
+
+
+.student-avatar {
+    width: 31px;
+    height: 31px;
+
+    border-radius: 50%;
+
+    background: #e7effc;
+
+    color: #174ea6;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+/* Status buttons */
+
+.status-buttons {
+    display: flex;
+
+    gap: 5px;
+}
+
+
+.status-btn {
+    border:
+        1px solid
+        #dce4ee;
+
+    background: white;
+
+    border-radius: 5px;
+
+    padding:
+        6px
+        9px;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    color: #7b8aa0;
+}
+
+
+.status-btn.present.selected {
+    background: #e5f7ee;
+
+    color: #159957;
+
+    border-color: #bce9d2;
+}
+
+
+.status-btn.absent.selected {
+    background: #feecef;
+
+    color: #dc3545;
+
+    border-color: #f5c5cb;
+}
+
+
+.status-btn.late.selected {
+    background: #fff3df;
+
+    color: #d98200;
+
+    border-color: #f4d29c;
+}
+
+
+.reason-input {
+    width: 100%;
+
+    min-width: 210px;
+
+    height: 35px;
+
+    border:
+        1px solid
+        #dce5f0;
+
+    border-radius: 6px;
+
+    outline: none;
+
+    padding:
+        0
+        10px;
+
+    font-size: 11px;
+
+    color: #425773;
+
+    background: #fff;
+}
+
+
+.reason-input:focus {
+    border-color: #1d5dcc;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(29, 93, 204, 0.08);
+}
+
+
+.not-required {
+    color: #a0acbb;
+
+    font-size: 11px;
+}
+
+
+/* Footer */
+
+.attendance-footer {
+    padding:
+        17px
+        25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-top:
+        1px solid
+        #e7edf5;
+}
+
+
+.attendance-summary {
+    display: flex;
+
+    gap: 18px;
+
+    font-size: 11px;
+
+    color: #7b8aa0;
+}
+
+
+.attendance-summary strong {
+    color: #334b6c;
+}
+
+
+.save-attendance-button {
+    height: 42px;
+
+    padding:
+        0
+        18px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #123f91,
+            #1d5dcc
+        );
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 5px 14px
+        rgba(29, 93, 204, 0.18);
+}
+
+
+.save-attendance-button:hover {
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+    .faculty-sidebar {
+        width: 220px;
+    }
+
+    .statistics-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .faculty-sidebar {
+        width: 70px;
+
+        padding:
+            20px
+            10px;
+    }
+
+    .sidebar-brand > div:last-child,
+    .faculty-profile > div:last-child,
+    .menu-title,
+    .menu-item:not(.active)::after,
+    .menu-item {
+        font-size: 0;
+    }
+
+    .sidebar-brand {
+        justify-content: center;
+
+        padding:
+            4px
+            0
+            20px;
+    }
+
+    .faculty-profile {
+        justify-content: center;
+    }
+
+    .menu-item {
+        justify-content: center;
+
+        padding: 12px;
+    }
+
+    .sidebar-logout {
+        justify-content: center;
+    }
+
+    .sidebar-logout {
+        font-size: 0;
+    }
+
+    .faculty-header {
+        padding:
+            0
+            20px;
+    }
+
+    .statistics-grid {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .attendance-card {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .statistics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .faculty-header h1 {
+        font-size: 19px;
+    }
+
+    .header-user > div:not(.small-avatar) {
+        display: none;
+    }
+
+    .attendance-heading {
+        align-items: flex-start;
+
+        gap: 15px;
+
+        flex-direction: column;
+    }
+
+    .attendance-filters {
+        grid-template-columns: 1fr;
+    }
+
+    .attendance-tools {
+        align-items: stretch;
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .student-search {
+        width: 100%;
+    }
+
+    .attendance-footer {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+}
+
+
+.login-error {
+    background: #fee2e2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.login-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   ROLE BASED LOGIN
+========================================================= */
+
+.role-section {
+    margin-bottom: 14px;
+}
+
+.role-section > label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+
+.role-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+
+.role-option {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px;
+    border: 1px solid #dbe4f0;
+    border-radius: 9px;
+    background: #ffffff;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s ease;
+}
+
+
+.role-option:hover {
+    border-color: #2563eb;
+    background: #f5f9ff;
+}
+
+
+.role-option-active {
+    border-color: #2563eb;
+    background: #eff6ff;
+    box-shadow: 0 0 0 1px #2563eb;
+}
+
+
+.role-icon {
+    min-width: 34px;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: #e8f0ff;
+    color: #1555c0;
+}
+
+
+.role-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+
+.role-text strong {
+    font-size: 12px;
+    color: #17345f;
+    line-height: 1.2;
+}
+
+
+.role-text span {
+    font-size: 10px;
+    color: #7890ae;
+}
+
+
+.role-check {
+    position: absolute;
+    top: 5px;
+    right: 6px;
+    width: 17px;
+    height: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #2563eb;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+
+.selected-role-display {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 11px;
+    margin-bottom: 14px;
+    border-radius: 8px;
+    background: #f1f6ff;
+    color: #315b91;
+    font-size: 12px;
+}
+
+
+.selected-role-display svg {
+    color: #2563eb;
+}
+
+
+.selected-role-display strong {
+    color: #174a99;
+}
+
+
+.login-error {
+    background: #fee2e2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+
+.login-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .role-list {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   ADMIN DASHBOARD
+========================================================= */
+
+.admin-dashboard {
+    min-height: 100vh;
+    display: flex;
+    background: #f4f7fc;
+    color: #17345f;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.admin-sidebar {
+    width: 260px;
+    min-height: 100vh;
+    background: linear-gradient(
+        180deg,
+        #123d87 0%,
+        #0c3478 100%
+    );
+    color: white;
+    display: flex;
+    flex-direction: column;
+    transition: width 0.25s ease;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+}
+
+
+.admin-sidebar-collapsed {
+    width: 78px;
+}
+
+
+.admin-sidebar-logo {
+    height: 100px;
+    padding: 0 22px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+
+.admin-logo-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+
+.admin-sidebar-logo h2 {
+    margin: 0;
+    font-size: 25px;
+    color: white;
+}
+
+
+.admin-sidebar-logo span {
+    display: block;
+    margin-top: 2px;
+    font-size: 11px;
+    color: #c8d8f2;
+}
+
+
+.admin-menu-title {
+    padding: 25px 24px 12px;
+    font-size: 11px;
+    letter-spacing: 1.2px;
+    color: #9eb6dc;
+    font-weight: 600;
+}
+
+
+.admin-navigation {
+    padding: 0 13px;
+}
+
+
+.admin-nav-item {
+    width: 100%;
+    border: none;
+    background: transparent;
+    color: #d7e4f8;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 13px 15px;
+    border-radius: 9px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: left;
+    transition: all 0.2s ease;
+}
+
+
+.admin-nav-item:hover {
+    background: rgba(255,255,255,0.10);
+    color: white;
+}
+
+
+.admin-nav-active {
+    background: rgba(255,255,255,0.17);
+    color: white;
+    box-shadow: inset 3px 0 0 white;
+}
+
+
+.admin-sidebar-collapsed .admin-nav-item {
+    justify-content: center;
+    padding: 13px 0;
+}
+
+
+.admin-sidebar-bottom {
+    margin-top: auto;
+    padding: 15px 13px;
+    border-top: 1px solid rgba(255,255,255,0.10);
+}
+
+
+.admin-logout {
+    color: #dce7f7;
+}
+
+
+.admin-logout:hover {
+    background: rgba(239,68,68,0.18);
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.admin-main {
+    margin-left: 260px;
+    width: calc(100% - 260px);
+    min-height: 100vh;
+    transition: all 0.25s ease;
+}
+
+
+.admin-sidebar-collapsed ~ .admin-main {
+    margin-left: 78px;
+    width: calc(100% - 78px);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.admin-header {
+    height: 92px;
+    background: white;
+    border-bottom: 1px solid #e3eaf4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 35px;
+}
+
+
+.admin-header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+
+.admin-menu-button {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #dce5f1;
+    background: white;
+    border-radius: 9px;
+    color: #42648f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+
+.admin-header h1 {
+    margin: 0;
+    font-size: 25px;
+    color: #15365f;
+}
+
+
+.admin-header p {
+    margin: 4px 0 0;
+    color: #7a91af;
+    font-size: 13px;
+}
+
+
+.admin-header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.admin-notification {
+    width: 42px;
+    height: 42px;
+    border: 1px solid #dce5f1;
+    background: white;
+    border-radius: 10px;
+    color: #526d91;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+}
+
+
+.admin-notification span {
+    width: 8px;
+    height: 8px;
+    background: #ef4444;
+    border-radius: 50%;
+    position: absolute;
+    top: 7px;
+    right: 7px;
+}
+
+
+.admin-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+
+.admin-avatar {
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    background: #dceaff;
+    color: #1758ba;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
+.admin-profile-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 100px;
+}
+
+
+.admin-profile-info strong {
+    font-size: 13px;
+    color: #1d3d66;
+}
+
+
+.admin-profile-info span {
+    margin-top: 2px;
+    font-size: 11px;
+    color: #7b91ad;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.admin-content {
+    padding: 30px 35px 50px;
+}
+
+
+/* =========================================================
+   WELCOME
+========================================================= */
+
+.admin-welcome {
+    background: linear-gradient(
+        100deg,
+        #1554ad,
+        #2472d1
+    );
+    border-radius: 14px;
+    padding: 24px 28px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+
+.admin-welcome h2 {
+    margin: 0;
+    font-size: 22px;
+}
+
+
+.admin-welcome p {
+    margin: 7px 0 0;
+    color: #dbeaff;
+    font-size: 13px;
+}
+
+
+.admin-welcome-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.13);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+.admin-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 32px;
+}
+
+
+.admin-stat-card {
+    background: white;
+    border: 1px solid #e0e8f2;
+    border-radius: 13px;
+    padding: 21px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 3px 12px rgba(28,62,103,0.04);
+}
+
+
+.admin-stat-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+
+.admin-stat-blue {
+    background: #e7f0ff;
+    color: #2563c7;
+}
+
+
+.admin-stat-green {
+    background: #e4f8ef;
+    color: #15945a;
+}
+
+
+.admin-stat-orange {
+    background: #fff1dc;
+    color: #df8500;
+}
+
+
+.admin-stat-purple {
+    background: #f0eaff;
+    color: #7350c7;
+}
+
+
+.admin-stat-card span {
+    display: block;
+    font-size: 12px;
+    color: #7890ae;
+}
+
+
+.admin-stat-card strong {
+    display: block;
+    margin-top: 3px;
+    font-size: 25px;
+    color: #173d6c;
+}
+
+
+.admin-stat-card small {
+    display: block;
+    margin-top: 2px;
+    font-size: 10px;
+    color: #9aaec6;
+}
+
+
+/* =========================================================
+   SECTION HEADERS
+========================================================= */
+
+.admin-section-header {
+    margin-bottom: 16px;
+}
+
+
+.admin-section-header h2 {
+    margin: 0;
+    font-size: 19px;
+    color: #183b68;
+}
+
+
+.admin-section-header p {
+    margin: 4px 0 0;
+    font-size: 12px;
+    color: #8095af;
+}
+
+
+/* =========================================================
+   MANAGEMENT
+========================================================= */
+
+.admin-management-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+
+.admin-management-card {
+    border: 1px solid #e0e8f2;
+    background: white;
+    border-radius: 12px;
+    padding: 19px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+
+.admin-management-card:hover {
+    border-color: #8db3e8;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 18px rgba(31,81,141,0.08);
+}
+
+
+.management-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+
+.management-blue {
+    background: #e8f1ff;
+    color: #2563c7;
+}
+
+
+.management-green {
+    background: #e5f8ef;
+    color: #15945a;
+}
+
+
+.management-orange {
+    background: #fff1dd;
+    color: #dc8400;
+}
+
+
+.management-purple {
+    background: #f0eaff;
+    color: #7652c7;
+}
+
+
+.management-red {
+    background: #fee9eb;
+    color: #dc3e50;
+}
+
+
+.admin-management-card h3 {
+    margin: 0;
+    color: #21446f;
+    font-size: 13px;
+}
+
+
+.admin-management-card p {
+    margin: 5px 0 0;
+    color: #8195ad;
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+
+.management-arrow {
+    margin-left: auto;
+    font-size: 20px;
+    color: #9aacc2;
+}
+
+
+/* =========================================================
+   ACTIVITY
+========================================================= */
+
+.admin-activity-heading {
+    margin-top: 32px;
+}
+
+
+.admin-empty-activity {
+    background: white;
+    border: 1px dashed #d6e0ec;
+    border-radius: 12px;
+    padding: 35px;
+    text-align: center;
+    color: #91a3b8;
+}
+
+
+.admin-empty-activity svg {
+    color: #8da8c9;
+}
+
+
+.admin-empty-activity h3 {
+    margin: 10px 0 4px;
+    color: #526f93;
+    font-size: 14px;
+}
+
+
+.admin-empty-activity p {
+    margin: 0;
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .admin-stat-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .admin-management-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .admin-sidebar {
+        width: 78px;
+    }
+
+    .admin-sidebar-logo {
+        justify-content: center;
+        padding: 0;
+    }
+
+    .admin-sidebar-logo > div:last-child {
+        display: none;
+    }
+
+    .admin-menu-title {
+        text-align: center;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .admin-navigation .admin-nav-item {
+        justify-content: center;
+        padding: 13px 0;
+    }
+
+    .admin-nav-item span {
+        display: none;
+    }
+
+    .admin-main {
+        margin-left: 78px;
+        width: calc(100% - 78px);
+    }
+
+    .admin-content {
+        padding: 25px 20px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .admin-header {
+        padding: 0 15px;
+    }
+
+    .admin-profile-info,
+    .admin-profile > svg {
+        display: none;
+    }
+
+    .admin-stat-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-management-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-welcome {
+        padding: 20px;
+    }
+
+    .admin-welcome-icon {
+        display: none;
+    }
+
+}
+
+/* =========================================================
+   ROLE TOGGLE LOGIN
+========================================================= */
+
+.role-selector-section {
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.role-selector-section > label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #17345f;
+}
+
+
+/* Main role toggle */
+
+.role-toggle {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+    padding: 4px;
+    background: #eaf0f7;
+    border: 1px solid #d7e1ee;
+    border-radius: 11px;
+}
+
+
+/* Individual role */
+
+.role-toggle-button {
+    min-width: 0;
+    height: 42px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: #607895;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 0 6px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+
+.role-toggle-button:hover {
+    background: #ffffff;
+    color: #2059ae;
+}
+
+
+.role-toggle-button svg {
+    flex-shrink: 0;
+}
+
+
+/* Selected role */
+
+.role-toggle-active {
+    background: #1e5bc6;
+    color: white;
+    box-shadow: 0 2px 7px rgba(30, 91, 198, 0.25);
+}
+
+
+.role-toggle-active:hover {
+    background: #1e5bc6;
+    color: white;
+}
+
+
+/* Selected role information */
+
+.selected-role-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    min-height: 30px;
+    margin-bottom: 10px;
+    font-size: 11px;
+    color: #7a90ab;
+}
+
+
+.selected-role-text strong {
+    color: #1e5bc6;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   LOGIN ERROR
+========================================================= */
+
+.login-error {
+    background: #fee2e2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+    padding: 9px 11px;
+    border-radius: 8px;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+
+.login-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .role-toggle-button {
+        font-size: 11px;
+        gap: 4px;
+    }
+
+    .role-toggle-button svg {
+        width: 15px;
+        height: 15px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .role-toggle {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4px;
+    }
+
+
+    .role-toggle-button {
+        height: 40px;
+        font-size: 12px;
+    }
+
+
+    .role-toggle-button svg {
+        width: 16px;
+        height: 16px;
+    }
+
+
+    .selected-role-text {
+        margin-bottom: 12px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .role-toggle-button {
+        font-size: 11px;
+        padding: 0 3px;
+    }
+
+}
+
+
+/* =========================
+   MENTOR ASSIGNMENTS
+   ========================= */
+
+.admin-management {
+    width: 100%;
+}
+
+.management-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.management-header h2 {
+    margin: 0;
+    color: #0b2a5b;
+    font-size: 24px;
+}
+
+.management-header p {
+    margin: 6px 0 0;
+    color: #64748b;
+}
+
+.management-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 18px;
+    align-items: end;
+    padding: 22px;
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(15, 45, 90, 0.08);
+    margin-bottom: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
+}
+
+.form-group select,
+.form-group input {
+    width: 100%;
+    padding: 11px 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: white;
+    font-size: 14px;
+    outline: none;
+}
+
+.form-group select:focus,
+.form-group input:focus {
+    border-color: #2563eb;
+}
+
+.primary-btn {
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    background: #155eef;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.primary-btn:hover {
+    background: #0f4dcc;
+}
+
+.primary-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.management-table-wrapper {
+    background: white;
+    border-radius: 14px;
+    overflow-x: auto;
+    box-shadow: 0 4px 18px rgba(15, 45, 90, 0.08);
+}
+
+.management-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.management-table th {
+    background: #f1f6ff;
+    color: #1e3a8a;
+    font-size: 13px;
+    text-align: left;
+    padding: 14px;
+    white-space: nowrap;
+}
+
+.management-table td {
+    padding: 14px;
+    border-top: 1px solid #e5e7eb;
+    color: #334155;
+    font-size: 14px;
+}
+
+.management-table tr:hover {
+    background: #f8fbff;
+}
+
+.danger-btn {
+    border: none;
+    background: #fee2e2;
+    color: #b91c1c;
+    padding: 8px 12px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.danger-btn:hover {
+    background: #fecaca;
+}
+
+.loading-text {
+    padding: 30px;
+    text-align: center;
+    color: #64748b;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.empty-state h3 {
+    margin: 0 0 8px;
+    color: #1e3a8a;
+}
+
+.empty-state p {
+    margin: 0;
+    color: #64748b;
+}
+
+@media (max-width: 900px) {
+    .management-form {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================
+   REAL FACULTY ATTENDANCE
+   ========================= */
+
+.faculty-dashboard {
+    width: 100%;
+}
+
+.dashboard-header {
+    margin-bottom: 24px;
+}
+
+.dashboard-header h1 {
+    margin: 0;
+    color: #0b2a5b;
+}
+
+.dashboard-header p {
+    margin-top: 7px;
+    color: #64748b;
+}
+
+.faculty-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 24px;
+}
+
+.faculty-stat-card {
+    background: white;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 4px 18px rgba(15, 45, 90, 0.08);
+}
+
+.faculty-stat-card span {
+    display: block;
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.faculty-stat-card strong {
+    font-size: 28px;
+    color: #0b2a5b;
+}
+
+.attendance-control-card {
+    background: white;
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 18px rgba(15, 45, 90, 0.08);
+}
+
+.attendance-control-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 18px;
+}
+
+.attendance-control-grid label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 7px;
+}
+
+.attendance-control-grid select,
+.attendance-control-grid input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 9px;
+    font-size: 14px;
+    background: white;
+}
+
+.selected-class-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 18px;
+    padding: 14px 16px;
+    background: #eff6ff;
+    border-radius: 9px;
+    color: #1e3a8a;
+}
+
+.selected-class-info span {
+    color: #64748b;
+}
+
+.attendance-table-card {
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(15, 45, 90, 0.08);
+    overflow: hidden;
+}
+
+.attendance-table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 24px;
+}
+
+.attendance-table-header h2 {
+    margin: 0;
+    color: #0b2a5b;
+    font-size: 20px;
+}
+
+.attendance-table-header p {
+    margin: 6px 0 0;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.student-search {
+    width: 230px;
+    padding: 11px 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    outline: none;
+}
+
+.student-search:focus {
+    border-color: #2563eb;
+}
+
+.attendance-table-wrapper {
+    overflow-x: auto;
+}
+
+.attendance-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.attendance-table th {
+    background: #f1f6ff;
+    color: #1e3a8a;
+    padding: 14px 18px;
+    text-align: left;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.attendance-table td {
+    padding: 14px 18px;
+    border-top: 1px solid #e5e7eb;
+    font-size: 14px;
+    color: #334155;
+}
+
+.attendance-buttons {
+    display: flex;
+    gap: 6px;
+}
+
+.status-btn {
+    padding: 7px 11px;
+    border-radius: 7px;
+    border: 1px solid #cbd5e1;
+    background: white;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status-btn.present.active {
+    background: #dcfce7;
+    color: #15803d;
+    border-color: #86efac;
+}
+
+.status-btn.absent.active {
+    background: #fee2e2;
+    color: #b91c1c;
+    border-color: #fca5a5;
+}
+
+.status-btn.late.active {
+    background: #ffedd5;
+    color: #c2410c;
+    border-color: #fdba74;
+}
+
+.absence-reason-input {
+    width: 190px;
+    padding: 9px 11px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    outline: none;
+}
+
+.absence-reason-input:focus {
+    border-color: #2563eb;
+}
+
+.not-applicable {
+    color: #94a3b8;
+}
+
+.attendance-loading,
+.attendance-empty {
+    padding: 50px;
+    text-align: center;
+    color: #64748b;
+}
+
+.attendance-save-area {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 24px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.save-attendance-btn {
+    border: none;
+    border-radius: 9px;
+    padding: 12px 24px;
+    background: #155eef;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.save-attendance-btn:hover {
+    background: #0f4dcc;
+}
+
+.save-attendance-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+@media (max-width: 900px) {
+
+    .faculty-stat-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .attendance-control-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .selected-class-info {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .attendance-table-header {
+        align-items: flex-start;
+        gap: 15px;
+        flex-direction: column;
+    }
+
+    .student-search {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/* =========================
+   FACULTY PROFILE
+   ========================= */
+
+.faculty-topbar {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.faculty-profile-area {
+    position: relative;
+}
+
+.faculty-profile-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    background: white;
+    padding: 8px 13px 8px 8px;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 3px 12px rgba(15, 45, 90, 0.08);
+}
+
+.faculty-avatar,
+.large-faculty-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #155eef;
+    color: white;
+    font-weight: 700;
+}
+
+.faculty-avatar {
+    width: 42px;
+    height: 42px;
+    font-size: 17px;
+}
+
+.faculty-profile-name {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.faculty-profile-name strong {
+    color: #0b2a5b;
+    font-size: 14px;
+}
+
+.faculty-profile-name span {
+    color: #64748b;
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+.profile-arrow {
+    color: #64748b;
+    font-size: 11px;
+    margin-left: 5px;
+}
+
+.faculty-profile-card {
+    position: absolute;
+    top: 58px;
+    right: 0;
+    width: 330px;
+    background: white;
+    border-radius: 14px;
+    padding: 20px;
+    z-index: 100;
+    box-shadow: 0 10px 35px rgba(15, 45, 90, 0.18);
+}
+
+.profile-card-header {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding-bottom: 17px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.large-faculty-avatar {
+    width: 52px;
+    height: 52px;
+    font-size: 20px;
+}
+
+.profile-card-header h3 {
+    margin: 0;
+    color: #0b2a5b;
+    font-size: 18px;
+}
+
+.profile-card-header p {
+    margin: 4px 0 0;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.profile-details {
+    padding: 16px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.profile-details div {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.profile-details span {
+    color: #64748b;
+    font-size: 12px;
+}
+
+.profile-details strong {
+    color: #334155;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.faculty-logout-btn {
+    width: 100%;
+    padding: 11px;
+    border: none;
+    border-radius: 8px;
+    background: #fee2e2;
+    color: #b91c1c;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.faculty-logout-btn:hover {
+    background: #fecaca;
+}
+
+
+/* ================================
+   FACULTY PORTAL RESPONSIVE LAYOUT
+================================ */
+
+.faculty-page {
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* Top profile */
+.faculty-topbar {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 20px 20px;
+    box-sizing: border-box;
+}
+
+/* Main layout */
+.faculty-layout {
+    display: flex;
+    width: 100%;
+    gap: 24px;
+    align-items: flex-start;
+    box-sizing: border-box;
+}
+
+/* Sidebar */
+.faculty-sidebar {
+    width: 240px;
+    min-width: 240px;
+    flex-shrink: 0;
+
+    background: #0b2a5b;
+    border-radius: 14px;
+
+    padding: 18px 12px;
+
+    box-sizing: border-box;
+
+    box-shadow: 0 4px 18px rgba(15, 45, 90, 0.12);
+
+    position: sticky;
+    top: 20px;
+}
+
+/* Sidebar title */
+.faculty-sidebar-title {
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+
+    padding: 8px 12px 18px;
+}
+
+/* Navigation buttons */
+.faculty-nav-btn {
+    width: 100%;
+
+    border: none;
+    background: transparent;
+
+    color: #dbeafe;
+
+    text-align: left;
+
+    padding: 12px 14px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    margin-bottom: 4px;
+
+    font-size: 14px;
+
+    box-sizing: border-box;
+}
+
+.faculty-nav-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.faculty-nav-btn.active {
+    background: #155eef;
+    color: white;
+}
+
+/* Logout */
+.faculty-sidebar-logout {
+    margin-top: 20px;
+    color: #fecaca;
+}
+
+.faculty-sidebar-logout:hover {
+    background: #991b1b;
+    color: white;
+}
+
+/* Main dashboard area */
+.faculty-main-content {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* ================================
+   DASHBOARD
+================================ */
+
+.faculty-dashboard {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.dashboard-header {
+    margin-bottom: 24px;
+}
+
+.dashboard-header h1 {
+    margin: 0;
+    color: #0b2a5b;
+}
+
+.dashboard-header p {
+    margin-top: 7px;
+    color: #64748b;
+}
+
+/* Stats */
+.faculty-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 24px;
+}
+
+.faculty-stat-card {
+    background: white;
+    border-radius: 14px;
+    padding: 20px;
+
+    box-shadow: 0 4px 18px rgba(15, 45, 90, 0.08);
+
+    box-sizing: border-box;
+}
+
+.faculty-stat-card span {
+    display: block;
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.faculty-stat-card strong {
+    font-size: 28px;
+    color: #0b2a5b;
+}
+
+/* ================================
+   ATTENDANCE CONTROLS
+================================ */
+
+.attendance-control-card {
+    background: white;
+    border-radius: 14px;
+    padding: 24px;
+
+    margin-bottom: 24px;
+
+    box-shadow: 0 4px 18px rgba(15, 45, 90, 0.08);
+
+    box-sizing: border-box;
+}
+
+.attendance-control-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(140px, 1fr) minmax(140px, 1fr);
+    gap: 18px;
+}
+
+.attendance-control-grid label {
+    display: block;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #334155;
+
+    margin-bottom: 7px;
+}
+
+.attendance-control-grid select,
+.attendance-control-grid input {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 12px 14px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+
+    background: white;
+}
+
+.selected-class-info {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 18px;
+
+    padding: 14px 16px;
+
+    background: #eff6ff;
+
+    border-radius: 9px;
+
+    color: #1e3a8a;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+}
+
+.selected-class-info span {
+    color: #64748b;
+}
+
+/* ================================
+   ATTENDANCE TABLE
+================================ */
+
+.attendance-table-card {
+    background: white;
+
+    border-radius: 14px;
+
+    box-shadow: 0 4px 18px rgba(15, 45, 90, 0.08);
+
+    overflow: hidden;
+
+    width: 100%;
+}
+
+.attendance-table-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 22px 24px;
+
+    box-sizing: border-box;
+}
+
+.attendance-table-header h2 {
+    margin: 0;
+
+    color: #0b2a5b;
+
+    font-size: 20px;
+}
+
+.attendance-table-header p {
+    margin: 6px 0 0;
+
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+.student-search {
+    width: 230px;
+    max-width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 11px 13px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 8px;
+
+    outline: none;
+}
+
+.student-search:focus {
+    border-color: #2563eb;
+}
+
+.attendance-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.attendance-table {
+    width: 100%;
+    min-width: 850px;
+
+    border-collapse: collapse;
+}
+
+.attendance-table th {
+    background: #f1f6ff;
+
+    color: #1e3a8a;
+
+    padding: 14px 18px;
+
+    text-align: left;
+
+    font-size: 13px;
+
+    white-space: nowrap;
+}
+
+.attendance-table td {
+    padding: 14px 18px;
+
+    border-top: 1px solid #e5e7eb;
+
+    font-size: 14px;
+
+    color: #334155;
+
+    white-space: nowrap;
+}
+
+.attendance-buttons {
+    display: flex;
+    gap: 6px;
+}
+
+.status-btn {
+    padding: 7px 11px;
+
+    border-radius: 7px;
+
+    border: 1px solid #cbd5e1;
+
+    background: white;
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+.status-btn.present.active {
+    background: #dcfce7;
+    color: #15803d;
+    border-color: #86efac;
+}
+
+.status-btn.absent.active {
+    background: #fee2e2;
+    color: #b91c1c;
+    border-color: #fca5a5;
+}
+
+.status-btn.late.active {
+    background: #ffedd5;
+    color: #c2410c;
+    border-color: #fdba74;
+}
+
+.absence-reason-input {
+    width: 190px;
+
+    padding: 9px 11px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 7px;
+
+    outline: none;
+
+    box-sizing: border-box;
+}
+
+.absence-reason-input:focus {
+    border-color: #2563eb;
+}
+
+.not-applicable {
+    color: #94a3b8;
+}
+
+.attendance-loading,
+.attendance-empty {
+    padding: 50px;
+
+    text-align: center;
+
+    color: #64748b;
+}
+
+.attendance-save-area {
+    display: flex;
+    justify-content: flex-end;
+
+    padding: 20px 24px;
+
+    border-top: 1px solid #e5e7eb;
+
+    box-sizing: border-box;
+}
+
+.save-attendance-btn {
+    border: none;
+
+    border-radius: 9px;
+
+    padding: 12px 24px;
+
+    background: #155eef;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.save-attendance-btn:hover {
+    background: #0f4dcc;
+}
+
+.save-attendance-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+/* ================================
+   FACULTY PROFILE
+================================ */
+
+.faculty-profile-area {
+    position: relative;
+}
+
+.faculty-profile-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    border: none;
+    background: white;
+
+    padding: 8px 13px 8px 8px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    box-shadow: 0 3px 12px rgba(15, 45, 90, 0.08);
+}
+
+.faculty-avatar,
+.large-faculty-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #155eef;
+    color: white;
+
+    font-weight: 700;
+}
+
+.faculty-avatar {
+    width: 42px;
+    height: 42px;
+    font-size: 17px;
+}
+
+.faculty-profile-name {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.faculty-profile-name strong {
+    color: #0b2a5b;
+    font-size: 14px;
+}
+
+.faculty-profile-name span {
+    color: #64748b;
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+.profile-arrow {
+    color: #64748b;
+    font-size: 11px;
+    margin-left: 5px;
+}
+
+.faculty-profile-card {
+    position: absolute;
+
+    top: 58px;
+    right: 0;
+
+    width: 330px;
+    max-width: calc(100vw - 30px);
+
+    background: white;
+
+    border-radius: 14px;
+
+    padding: 20px;
+
+    z-index: 100;
+
+    box-shadow: 0 10px 35px rgba(15, 45, 90, 0.18);
+
+    box-sizing: border-box;
+}
+
+.profile-card-header {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    padding-bottom: 17px;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.large-faculty-avatar {
+    width: 52px;
+    height: 52px;
+    font-size: 20px;
+}
+
+.profile-card-header h3 {
+    margin: 0;
+    color: #0b2a5b;
+    font-size: 18px;
+}
+
+.profile-card-header p {
+    margin: 4px 0 0;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.profile-details {
+    padding: 16px 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 13px;
+}
+
+.profile-details div {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.profile-details span {
+    color: #64748b;
+    font-size: 12px;
+}
+
+.profile-details strong {
+    color: #334155;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.faculty-logout-btn {
+    width: 100%;
+
+    padding: 11px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #fee2e2;
+
+    color: #b91c1c;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.faculty-logout-btn:hover {
+    background: #fecaca;
+}
+
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 1100px) {
+
+    .faculty-layout {
+        gap: 18px;
+    }
+
+    .faculty-sidebar {
+        width: 210px;
+        min-width: 210px;
+    }
+
+    .faculty-stat-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .attendance-control-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .attendance-control-grid > div:first-child {
+        grid-column: 1 / -1;
+    }
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 768px) {
+
+    .faculty-topbar {
+        padding: 0 10px 15px;
+    }
+
+    /* Sidebar becomes horizontal/mobile menu */
+    .faculty-layout {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .faculty-sidebar {
+        width: 100%;
+        min-width: 0;
+
+        position: static;
+
+        padding: 12px;
+
+        border-radius: 12px;
+    }
+
+    .faculty-sidebar-title {
+        padding: 6px 10px 12px;
+
+        font-size: 17px;
+    }
+
+    /* Navigation becomes a grid */
+    .faculty-nav-btn {
+        width: 100%;
+
+        margin: 0;
+
+        padding: 11px 8px;
+
+        text-align: center;
+
+        font-size: 13px;
+    }
+
+    .faculty-sidebar {
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 5px;
+    }
+
+    .faculty-sidebar-title {
+        grid-column: 1 / -1;
+    }
+
+    .faculty-sidebar-logout {
+        margin-top: 0;
+    }
+
+    /* Main content */
+    .faculty-main-content {
+        width: 100%;
+    }
+
+    /* Stats */
+    .faculty-stat-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
+    }
+
+    .faculty-stat-card {
+        padding: 15px;
+    }
+
+    .faculty-stat-card strong {
+        font-size: 24px;
+    }
+
+    /* Controls */
+    .attendance-control-card {
+        padding: 16px;
+    }
+
+    .attendance-control-grid {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+    .attendance-control-grid > div:first-child {
+        grid-column: auto;
+    }
+
+    /* Table header */
+    .attendance-table-header {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        padding: 18px;
+    }
+
+    .student-search {
+        width: 100%;
+    }
+
+    /* Save button */
+    .attendance-save-area {
+        padding: 16px;
+    }
+
+    .save-attendance-btn {
+        width: 100%;
+    }
+
+    /* Profile */
+    .faculty-profile-name {
+        display: none;
+    }
+
+    .faculty-profile-card {
+        right: 0;
+
+        width: 300px;
+    }
+}
+
+
+/* =====================================
+   SMALL MOBILE
+===================================== */
+
+@media (max-width: 480px) {
+
+    .faculty-stat-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .faculty-sidebar {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .faculty-nav-btn {
+        font-size: 12px;
+        padding: 10px 5px;
+    }
+
+    .dashboard-header h1 {
+        font-size: 26px;
+    }
+
+    .dashboard-header p {
+        font-size: 13px;
+    }
+
+    .selected-class-info {
+        flex-direction: column;
+    }
+
+    .faculty-profile-card {
+        width: calc(100vw - 20px);
+
+        right: -5px;
+    }
+}
+
+.faculty-layout {
+    display: flex;
+    width: 100%;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+.faculty-sidebar {
+    width: 240px;
+    min-width: 240px;
+    flex-shrink: 0;
+}
+
+.faculty-main-content {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .faculty-layout {
+        flex-direction: column;
+    }
+
+    .faculty-sidebar {
+        width: 100%;
+        min-width: 0;
+        position: static;
+    }
+
+    .faculty-main-content {
+        width: 100%;
+    }
+}
+
+
+/* =========================================
+   MENTOR DASHBOARD
+========================================= */
+
+.mentor-page {
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* =========================================
+   TOP BAR
+========================================= */
+
+.mentor-topbar {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 20px 20px;
+    box-sizing: border-box;
+}
+
+.mentor-profile-area {
+    position: relative;
+}
+
+.mentor-profile-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    border: none;
+    background: white;
+
+    padding: 8px 13px 8px 8px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    box-shadow: 0 3px 12px rgba(15, 45, 90, 0.08);
+}
+
+.mentor-avatar,
+.mentor-large-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #155eef;
+    color: white;
+
+    font-weight: 700;
+}
+
+.mentor-avatar {
+    width: 42px;
+    height: 42px;
+    font-size: 17px;
+}
+
+.mentor-profile-name {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.mentor-profile-name strong {
+    color: #0b2a5b;
+    font-size: 14px;
+}
+
+.mentor-profile-name span {
+    color: #64748b;
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+.mentor-profile-arrow {
+    color: #64748b;
+    font-size: 11px;
+    margin-left: 5px;
+}
+
+/* =========================================
+   PROFILE CARD
+========================================= */
+
+.mentor-profile-card {
+    position: absolute;
+
+    top: 58px;
+    right: 0;
+
+    width: 320px;
+    max-width: calc(100vw - 20px);
+
+    background: white;
+
+    border-radius: 14px;
+
+    padding: 20px;
+
+    z-index: 100;
+
+    box-shadow: 0 10px 35px rgba(15, 45, 90, 0.18);
+
+    box-sizing: border-box;
+}
+
+.mentor-profile-header {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    padding-bottom: 17px;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.mentor-large-avatar {
+    width: 52px;
+    height: 52px;
+    font-size: 20px;
+}
+
+.mentor-profile-header h3 {
+    margin: 0;
+    color: #0b2a5b;
+    font-size: 18px;
+}
+
+.mentor-profile-header p {
+    margin: 4px 0 0;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.mentor-profile-details {
+    padding: 16px 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 13px;
+}
+
+.mentor-profile-details div {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.mentor-profile-details span {
+    color: #64748b;
+    font-size: 12px;
+}
+
+.mentor-profile-details strong {
+    color: #334155;
+    font-size: 14px;
+}
+
+.mentor-logout-btn {
+    width: 100%;
+
+    padding: 11px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #fee2e2;
+
+    color: #b91c1c;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+/* =========================================
+   MAIN LAYOUT
+========================================= */
+
+.mentor-layout {
+    display: flex;
+
+    width: 100%;
+
+    gap: 24px;
+
+    align-items: flex-start;
+
+    box-sizing: border-box;
+}
+
+.mentor-sidebar {
+    width: 240px;
+    min-width: 240px;
+
+    flex-shrink: 0;
+
+    background: #0b2a5b;
+
+    border-radius: 14px;
+
+    padding: 18px 12px;
+
+    box-sizing: border-box;
+
+    box-shadow: 0 4px 18px rgba(15, 45, 90, 0.12);
+
+    position: sticky;
+    top: 20px;
+}
+
+.mentor-sidebar-title {
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    padding: 8px 12px 18px;
+}
+
+.mentor-nav-btn {
+    width: 100%;
+
+    border: none;
+
+    background: transparent;
+
+    color: #dbeafe;
+
+    text-align: left;
+
+    padding: 12px 14px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    margin-bottom: 4px;
+
+    font-size: 14px;
+}
+
+.mentor-nav-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+
+    color: white;
+}
+
+.mentor-nav-btn.active {
+    background: #155eef;
+
+    color: white;
+}
+
+.mentor-sidebar-logout {
+    margin-top: 20px;
+
+    color: #fecaca;
+}
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.mentor-main-content {
+    flex: 1;
+
+    min-width: 0;
+
+    width: 100%;
+
+    box-sizing: border-box;
+}
+
+.mentor-dashboard-header {
+    margin-bottom: 24px;
+}
+
+.mentor-dashboard-header h1 {
+    margin: 0;
+
+    color: #0b2a5b;
+
+    font-size: 32px;
+}
+
+.mentor-dashboard-header p {
+    margin-top: 7px;
+
+    color: #64748b;
+}
+
+/* =========================================
+   STAT CARDS
+========================================= */
+
+.mentor-stat-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 18px;
+
+    margin-bottom: 24px;
+}
+
+.mentor-stat-card {
+    background: white;
+
+    border-radius: 14px;
+
+    padding: 20px;
+
+    box-shadow: 0 4px 18px rgba(15, 45, 90, 0.08);
+
+    box-sizing: border-box;
+}
+
+.mentor-stat-card span {
+    display: block;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+    margin-bottom: 8px;
+}
+
+.mentor-stat-card strong {
+    font-size: 28px;
+
+    color: #0b2a5b;
+}
+
+/* =========================================
+   ABSENCE TABLE CARD
+========================================= */
+
+.mentor-table-card {
+    width: 100%;
+
+    background: white;
+
+    border-radius: 14px;
+
+    box-shadow: 0 4px 18px rgba(15, 45, 90, 0.08);
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+}
+
+.mentor-table-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 22px 24px;
+
+    box-sizing: border-box;
+}
+
+.mentor-table-header h2 {
+    margin: 0;
+
+    color: #0b2a5b;
+
+    font-size: 20px;
+}
+
+.mentor-table-header p {
+    margin: 6px 0 0;
+
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+.mentor-search {
+    width: 240px;
+
+    max-width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 11px 13px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 8px;
+
+    outline: none;
+}
+
+.mentor-search:focus {
+    border-color: #2563eb;
+}
+
+/* =========================================
+   TABLE
+========================================= */
+
+.mentor-table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+.mentor-table {
+    width: 100%;
+
+    min-width: 1050px;
+
+    border-collapse: collapse;
+}
+
+.mentor-table th {
+    background: #f1f6ff;
+
+    color: #1e3a8a;
+
+    padding: 14px 16px;
+
+    text-align: left;
+
+    font-size: 13px;
+
+    white-space: nowrap;
+}
+
+.mentor-table td {
+    padding: 14px 16px;
+
+    border-top: 1px solid #e5e7eb;
+
+    font-size: 14px;
+
+    color: #334155;
+
+    white-space: nowrap;
+}
+
+.mentor-subject-name {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #64748b;
+
+    font-size: 12px;
+}
+
+/* =========================================
+   ABSENT BADGE
+========================================= */
+
+.mentor-absent-badge {
+    display: inline-block;
+
+    padding: 6px 10px;
+
+    border-radius: 7px;
+
+    background: #fee2e2;
+
+    color: #b91c1c;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+/* =========================================
+   REASON INPUT
+========================================= */
+
+.mentor-reason-input {
+    width: 230px;
+
+    padding: 9px 11px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 7px;
+
+    outline: none;
+
+    box-sizing: border-box;
+}
+
+.mentor-reason-input:focus {
+    border-color: #2563eb;
+}
+
+/* =========================================
+   SAVE BUTTON
+========================================= */
+
+.mentor-save-btn {
+    border: none;
+
+    border-radius: 7px;
+
+    padding: 9px 15px;
+
+    background: #155eef;
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.mentor-save-btn:hover {
+    background: #0f4dcc;
+}
+
+.mentor-save-btn:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+/* =========================================
+   LOADING / EMPTY
+========================================= */
+
+.mentor-loading,
+.mentor-empty {
+    padding: 60px 30px;
+
+    text-align: center;
+
+    color: #64748b;
+}
+
+.mentor-empty h3 {
+    margin: 15px 0 6px;
+
+    color: #0b2a5b;
+}
+
+.mentor-empty p {
+    margin: 0;
+
+    font-size: 14px;
+}
+
+.mentor-empty-icon {
+    width: 50px;
+    height: 50px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #dcfce7;
+
+    color: #15803d;
+
+    font-size: 24px;
+
+    font-weight: 700;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .mentor-layout {
+        gap: 18px;
+    }
+
+    .mentor-sidebar {
+        width: 210px;
+
+        min-width: 210px;
+    }
+
+    .mentor-stat-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .mentor-topbar {
+        padding: 0 10px 15px;
+    }
+
+    .mentor-layout {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .mentor-sidebar {
+        width: 100%;
+
+        min-width: 0;
+
+        position: static;
+
+        padding: 12px;
+    }
+
+    .mentor-sidebar-title {
+        padding: 6px 10px 12px;
+
+        font-size: 17px;
+    }
+
+    .mentor-sidebar {
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 5px;
+    }
+
+    .mentor-sidebar-title {
+        grid-column: 1 / -1;
+    }
+
+    .mentor-nav-btn {
+        margin: 0;
+
+        text-align: center;
+
+        padding: 11px 8px;
+
+        font-size: 13px;
+    }
+
+    .mentor-sidebar-logout {
+        margin-top: 0;
+    }
+
+    .mentor-main-content {
+        width: 100%;
+    }
+
+    .mentor-stat-grid {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+    .mentor-table-header {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        padding: 18px;
+    }
+
+    .mentor-search {
+        width: 100%;
+    }
+
+    .mentor-profile-name {
+        display: none;
+    }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .mentor-dashboard-header h1 {
+        font-size: 26px;
+    }
+
+    .mentor-dashboard-header p {
+        font-size: 13px;
+    }
+
+    .mentor-profile-card {
+        width: calc(100vw - 20px);
+    }
+}
+
+/* =========================================
+   MENTOR ASSIGNED CLASS
+========================================= */
+
+.mentor-class-card {
+    width: 100%;
+    box-sizing: border-box;
+
+    background: white;
+
+    border-radius: 14px;
+
+    padding: 22px 24px;
+
+    margin-bottom: 24px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    box-shadow: 0 4px 18px rgba(15, 45, 90, 0.08);
+}
+
+.mentor-class-card > div:first-child {
+    min-width: 0;
+}
+
+.mentor-class-card > div:first-child > span {
+    display: block;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    margin-bottom: 6px;
+}
+
+.mentor-class-card h2 {
+    margin: 0;
+
+    color: #0b2a5b;
+
+    font-size: 22px;
+}
+
+.mentor-class-details {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: flex-end;
+
+    gap: 8px;
+}
+
+.mentor-class-details span {
+    background: #eff6ff;
+
+    color: #1e3a8a;
+
+    padding: 8px 12px;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .mentor-class-card {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 18px;
+    }
+
+    .mentor-class-details {
+        justify-content: flex-start;
+
+        width: 100%;
+    }
+
+    .mentor-class-details span {
+        white-space: normal;
+    }
+}
