@@ -31,7 +31,10 @@ SECRET_KEY = os.environ.get(
 DEBUG = os.environ.get("DEBUG", "False") == "True"
 
 
-# Render automatically provides RENDER_EXTERNAL_HOSTNAME
+# --------------------------------------------------
+# Allowed hosts
+# --------------------------------------------------
+
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
@@ -42,7 +45,6 @@ render_hostname = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
 if render_hostname:
     ALLOWED_HOSTS.append(render_hostname)
 
-# Optional custom domain
 custom_domain = os.environ.get("CUSTOM_DOMAIN")
 
 if custom_domain:
@@ -85,7 +87,7 @@ MIDDLEWARE = [
     # Serve static files in production
     "whitenoise.middleware.WhiteNoiseMiddleware",
 
-    # CORS must appear before CommonMiddleware
+    # CORS middleware
     "corsheaders.middleware.CorsMiddleware",
 
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -130,8 +132,8 @@ TEMPLATES = [
 # Database
 # --------------------------------------------------
 
-# Local development uses SQLite.
-# Render production uses DATABASE_URL PostgreSQL.
+# Render uses DATABASE_URL.
+# Local development uses SQLite if DATABASE_URL is not present.
 
 DATABASE_URL = os.environ.get("DATABASE_URL")
 
@@ -140,6 +142,7 @@ if DATABASE_URL:
         "default": dj_database_url.parse(
             DATABASE_URL,
             conn_max_age=600,
+            conn_health_checks=True,
         )
     }
 else:
@@ -192,7 +195,6 @@ LANGUAGE_CODE = "en-us"
 TIME_ZONE = "Asia/Kolkata"
 
 USE_I18N = True
-
 USE_TZ = True
 
 
@@ -221,7 +223,6 @@ STORAGES = {
 # --------------------------------------------------
 
 MEDIA_URL = "/media/"
-
 MEDIA_ROOT = BASE_DIR / "media"
 
 
@@ -247,16 +248,21 @@ REST_FRAMEWORK = {
 
 
 # --------------------------------------------------
-# CORS settings
+# Frontend URL
 # --------------------------------------------------
 
-# Add your Netlify URL in Render environment variables:
+# In Render environment variables, add:
 #
-# FRONTEND_URL=https://your-site.netlify.app
+# FRONTEND_URL=https://your-netlify-site.netlify.app
 #
-# Multiple URLs can be separated by commas.
+# Do not add a slash at the end.
 
-frontend_url = os.environ.get("https://mgu-attandance-portal.netlify.app/", "")
+frontend_url = os.environ.get("FRONTEND_URL", "").strip().rstrip("/")
+
+
+# --------------------------------------------------
+# CORS settings
+# --------------------------------------------------
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
@@ -265,7 +271,7 @@ CORS_ALLOWED_ORIGINS = [
 if frontend_url:
     CORS_ALLOWED_ORIGINS.extend(
         [
-            url.strip()
+            url.strip().rstrip("/")
             for url in frontend_url.split(",")
             if url.strip()
         ]
@@ -283,7 +289,7 @@ CSRF_TRUSTED_ORIGINS = [
 if frontend_url:
     CSRF_TRUSTED_ORIGINS.extend(
         [
-            url.strip()
+            url.strip().rstrip("/")
             for url in frontend_url.split(",")
             if url.strip()
         ]
