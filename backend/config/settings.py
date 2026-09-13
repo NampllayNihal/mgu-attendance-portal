@@ -256,7 +256,7 @@ REST_FRAMEWORK = {
 #
 # Multiple URLs can be separated by commas.
 
-frontend_url = os.environ.get("FRONTEND_URL", "")
+frontend_url = os.environ.get("https://mgu-attandance-portal.netlify.app/", "")
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
